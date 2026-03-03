@@ -443,9 +443,9 @@ export default function PipelineArchitecture() {
                         ))}
                     </div>
                     <div className="mt-3 pt-3 border-t text-[11px] text-neutral-500 flex flex-wrap gap-x-6 gap-y-1" style={{ borderColor: '#FF8D2830' }}>
-                        <span>📌 JSON sidecar = the vector store. No Pinecone. No Weaviate. No Milvus.</span>
-                        <span>📌 S3 object headers = lightweight graph edge index</span>
-                        <span>📌 FAISS reads directly from INFINIA — no sync pipeline, no external service</span>
+                        <span>📌 INFINIA stores embeddings persistently (JSON sidecar) — FAISS is a search algorithm library, not a database. At query time, vectors load from INFINIA into RAM; FAISS finds nearest neighbours in-process. No separate service.</span>
+                        <span>📌 S3 object headers = lightweight graph edge index — no Neo4j, no graph DB</span>
+                        <span>📌 No Pinecone. No Weaviate. No Milvus. INFINIA replaces their storage role; FAISS replaces their ANN algorithm — both for free.</span>
                     </div>
                 </div>
 
