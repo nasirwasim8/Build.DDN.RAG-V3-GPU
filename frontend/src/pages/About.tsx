@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Image, Video, FileText, Zap, Database, ArrowRight, DollarSign, TrendingUp, Trophy, ChevronDown } from 'lucide-react'
+import PipelineArchitecture from '../components/PipelineArchitecture'
 
 interface AboutPageProps {
   onStartDemo?: () => void
@@ -716,6 +717,11 @@ export default function AboutPage({ onStartDemo }: AboutPageProps) {
            VSS Strategic Outcomes  (inserted before Problem Statement)
        ════════════════════════════════════════════════════════════════════════ */}
       <VssOutcomesSection onStartDemo={onStartDemo} />
+
+      {/* ════════════════════════════════════════════════════════════════════════
+           DDN INFINIA × NVIDIA VSS — Interactive Pipeline Architecture
+       ════════════════════════════════════════════════════════════════════════ */}
+      <PipelineArchitecture />
 
       {/* Problem Statement Section */}
       <section
