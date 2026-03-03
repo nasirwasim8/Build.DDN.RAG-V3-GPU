@@ -290,7 +290,7 @@ export default function PipelineArchitecture() {
     const [activeStep, setActiveStep] = useState<string | null>(null)
 
     const activeIngestStage = ingestionStages.find(s => s.id === activeStage)
-    const scenario = searchScenarios.find(s => s.id === activeScenario)!
+    // activeScenario drives the UI directly via .find() in JSX
 
     return (
         <section style={{ background: '#ffffff', borderTop: '1px solid #f3f4f6' }} className="px-6 py-16">
