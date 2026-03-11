@@ -1,75 +1,98 @@
+# =============================================================================
+# Credentials — NEVER commit
+# =============================================================================
+backend/data/storage_config.json
+backend/data/*.json
+!backend/data/*.example.json
+backend/.env
+backend/.env.*
+!backend/.env.example
+.env
+.env.*
+!.env.example
+
+# =============================================================================
 # Python
+# =============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-env/
+*.pyo
+*.pyd
+backend/venv/
 venv/
-ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-
-# Node
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
 dist/
 build/
+.eggs/
+*.egg
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+htmlcoverage/
+.coverage
 
-# Environment
-.env
-.env.local
-.env.*.local
-backend/.env
+# =============================================================================
+# Node / Frontend
+# =============================================================================
+frontend/node_modules/
+node_modules/
+frontend/dist/
+dist/
+frontend/.next/
+.cache/
+*.tsbuildinfo
 
-# IDE
-.vscode/
+# =============================================================================
+# Logs & runtime
+# =============================================================================
+logs/
+*.log
+*.log.*
+pm2-*.json
+
+# =============================================================================
+# OS / Editor
+# =============================================================================
+.DS_Store
+Thumbs.db
 .idea/
+.vscode/
 *.swp
 *.swo
 *~
 
-# OS
-.DS_Store
-Thumbs.db
+# =============================================================================
+# Internal / one-off scripts — not needed for deployment
+# =============================================================================
+apply_aws_sync_patch.py
+apply_aws_sync_patch.sh
+apply_s3_toggle_patch.py
+diagnose_s3.py
+test_aws_upload.py
+test_nvidia_api_speed.py
+push_to_server.ps1
+create_deployment_package.sh
+deploy_wsl.sh
+NEXT_SESSION.md
+bucket_monitor.py.backup
+backend/app/services/*.backup
 
-# Cache
-.cache/
-*.log
+# =============================================================================
+# WSL/OCI-specific ecosystem configs (redundant — deploy.sh generates one)
+# =============================================================================
+ecosystem.hpod.config.js
+ecosystem.oci.config.js
 
-# Data
-backend/data/faiss_index/
-backend/data/storage_config.json.backup
-backend/data/storage_config.json
-
-# Uploads (if storing locally)
-backend/uploads/
-
-# Cache disabled folder (contains test videos)
-cache_disabled/
-
-# Video files
-*.mp4
-*.avi
-*.mov
-
-# Backup files
-*.tar.gz
+# =============================================================================
+# Large binary files
+# =============================================================================
+*.pdf
 *.zip
-ddn-multimodal-semantic-search.zip
+*.tar.gz
+*.tar
+
+# =============================================================================
+# Local assistant context
+# =============================================================================
+.gemini/
